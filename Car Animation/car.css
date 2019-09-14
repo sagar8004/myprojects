@@ -1,0 +1,85 @@
+#birld{
+	position: absolute;
+	opacity: 0.4;
+	top:30px;
+	right: 200px;
+	height: 150px;
+	width: 400px;
+	animation: birld 2s linear infinite;
+}
+@keyframes birld
+{
+	50%
+	{
+		transform: translateY(30px); 
+	}
+	100%
+	{
+		transform: translateX(30px);
+	}
+}
+
+#road
+{
+	position:absolute;
+	bottom: 0;
+	height: 150px;
+	animation: road 2s linear infinite;
+}
+@keyframes road
+{
+	100%
+	{
+		transform: translateX(-100px);
+	}
+}
+
+#city{
+	position: absolute;
+	bottom:145px;
+	width:1450px;
+	height: 300px;
+	animation: city 2s linear infinite;
+
+}
+
+@keyframes city
+{
+	100%
+	{
+		transform: translateX(-100px);
+	}
+}
+#car{
+	position: absolute;
+	bottom: 50px;
+	left:400px;
+	height: 150px;
+	width: 200px;
+}
+#wheel1{
+	position: absolute;
+	bottom: 75px;
+	left: 414px;
+	height: 45px;
+	width: 45px;
+	animation: wheel 1s linear infinite;
+
+}
+
+#wheel2{
+	position: absolute;
+	bottom: 73px;
+	left: 535px; 
+	width:45px;
+	height: 45px;
+	animation: wheel 1s linear infinite;
+}
+
+@keyframes wheel
+{
+	100%
+		{
+			transform:rotate(360deg);
+		}
+}
