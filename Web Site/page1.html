@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>form login</title>
+	<link rel="stylesheet" type="text/css" href="page1.css">
+</head>
+<body>
+	<div class="log">
+		<img src="login.png" class="log1">
+		<h1>SIGNIN</h1>
+		<form id="frm" onsubmit="return check();" action="page4.html">
+			<p>USERNAME</p>
+			<input type="text" name="text" placeholder="username" id="text"><span id="message"></span>
+			<p>PASSWORD</p>
+			<input type="password" name="password" placeholder="password" id="password"><span id="pass"></span></br>
+			<input type="submit" value="LOGIN" id="submit">
+		</form>
+			<a href="page5.html">Forget Your Password ?</a> &emsp;
+			<a href="page2.html">Create A New Account</a>
+	</div>
+	<script type="text/javascript">
+		
+		function check(){
+		var x=document.getElementById('text').value;
+		var y=document.getElementById('password').value;
+		if(x=='')
+		{
+			document.getElementById('message').innerHTML="Enter Username";
+			return false;
+		}
+		else if(y=='')
+		{	
+			document.getElementById('message').style.display="none";
+			document.getElementById('pass').innerHTML="Enter Password";
+			return false;
+		}
+		document.getElementById('pass').style.display="none";
+		if(x!='sagar')
+		{	
+			alert('Invalid Username');
+			return false;
+		}
+		else if (y!='12345')
+		{
+			alert('Invalid Password');
+			return false;
+		}
+
+		}
+	</script>
+
+
+</body>
+</html>

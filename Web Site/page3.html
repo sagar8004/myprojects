@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript" src="page3.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>profile</title>
+	<link rel="stylesheet" type="text/css" href="page3.css">
+</head>
+<body>
+	<div class="first">
+		<h2>Profile</h2>	
+	</div>
+	<div class="second">
+		<p align="center"><span class="fa fa-user" style="font-size:60px" id="fa"></span></p>
+		<p>Name:<span id="text"></span></p>
+		<p>Email:<span id="email"></span></p>
+		<p>Password:<span id="password"></span></p>
+		<p>Mobile:<span id="Mobile"></span></p>
+		<p>DOB:<span id="dob"></span></p>
+		<a href="page1.html">home</a>
+	</div>
+	<script type="text/javascript">
+		document.getElementById('text').innerHTML=localStorage.getItem('fname');
+		document.getElementById('email').innerHTML=localStorage.getItem('email');
+		document.getElementById('password').innerHTML=localStorage.getItem('pass');
+		document.getElementById('Mobile').innerHTML=localStorage.getItem('mobile');
+		document.getElementById('dob').innerHTML=localStorage.getItem('date');
+	</script>
+	
+	</div>
+</body>
+</html>

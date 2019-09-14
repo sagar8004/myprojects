@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript" src="page2.js"></script>
+	<title>signup</title>
+	<link rel="stylesheet" type="text/css" href="page2.css">
+</head>
+<body>
+	<div class="main">
+		<img src="login1.png" id="img"><span id="message"></span>
+	</div>
+	<div class="first">
+		<div class="second">
+			<h2>Sign up</h2>
+			<p>Create a Account</p>
+			<form id="frm" onsubmit="return myfun()" action="page3.html">
+				<input type="text" name="fname" placeholder="First Name" size="13" id="fname">
+				<input type="text" name="lname" placeholder="Last Name" size="13" id="lname"></br>
+				<input type="email" name="email" placeholder="Email address" size="33" id="email"></br>
+				<input type="password" name="password" placeholder="Password" size="33" id="password"></br>
+				<input type="password" name="cpassword" placeholder="Confirm Password" size="33" id="cpassword"></br>
+				<input type="text" name="mobile" placeholder="Mobile Number" size="33" id="mobile"></br>	
+				<select id="month">
+					<option value="month" selected disabled>Birth Month</option>
+					<option value="1">JAN</option>
+					<option value="2">FEB</option>
+					<option value="3">MAR</option>
+					<option value="4">APR</option>
+					<option value="5">MAY</option>
+					<option value="6">JUNE</option>
+					<option value="7">JULY</option>
+					<option value="8">AUG</option>
+					<option value="9">SEP</option>
+					<option value="10">OCT</option>
+					<option value="11">NOV</option>
+					<option value="12">DEC</option>
+				</select>
+				<select id="date">
+					<option selected disabled>Day</option>
+					<option>1</option>	
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>	
+					<option>5</option>
+					<option>6</option>
+					<option>7</option>	
+					<option>8</option>
+					<option>9</option>
+					<option>10</option>
+					<option>11</option>
+					<option>12</option>
+				</select>
+				<select id="year">
+					<option selected disabled>Year</option>
+					<option>2009</option>
+					<option>2010</option>
+					<option>2011</option>
+					<option>2012</option>
+					<option>2013</option>
+					<option>2014</option>
+					<option>2015</option>
+					<option>2016</option>
+					<option>2017</option>
+					<option>2018</option>
+					<option>2019</option>
+					<option>2020</option>
+				</select>
+			
+				<p>By clicking "submit", you agree to the<span style="color: blue"><i>Terms</i></span> and <span style="color: blue"><i>Condition</i></span></p>
+				<input type="submit" value="Submit" id="submit">
+			</form>
+				<p>Already have account? <a href="page1.html">Sign in</a></p>
+		</di>	</div>
+</body>
+</html>
