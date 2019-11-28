@@ -1,0 +1,11 @@
+body{
+    background:lightblue;
+}
+
+.main{
+    font-family: serif;
+    align-items:center;
+    height: 10px;
+    float: center;
+
+}
