@@ -1,1 +1,18 @@
+{% load static %}
+<html>
+<head>
+
+</head>
+<body>
+
 <h1>play</h1>
+{% for data in demo1 %}
+
+<h3>{{data.video.url}}</h3>
+<p>{{ data.id }} {{ data.title }}</p>
+<video height="300" width="400" autoplay controls>
+    <source src={{data.video.url}} type="video/mp4">video -->
+</video>
+{% endfor %}
+</body>
+</html>

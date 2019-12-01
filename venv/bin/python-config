@@ -1,4 +1,4 @@
-#!/home/sagar/Delpoy2/website/venv/bin/python
+#!/home/sagar/Deploy1/website/venv/bin/python
 
 import sys
 import getopt

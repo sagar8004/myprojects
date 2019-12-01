@@ -12,7 +12,10 @@ urlpatterns = [
     path('content',views.content,name='content'),
     path('upload',views.upload,name='upload'),
     path('store',views.store,name='store'),
-    path('edit',views.edit,name='edit'),
+    # path('edit',views.edit,name='edit'),
+
+    path('play/<int:pk>',views.play,name='play')
+    # path
 ]
 
 

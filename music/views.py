@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .models import *
 from django.contrib import messages
-from django.contrib.auth.models import auth
+from django.contrib.auth.models import auth, User
 from django.contrib.auth import authenticate
 from .forms import *
 from django.conf import settings
@@ -36,11 +36,11 @@ def content(request):
         username=request.POST['username']
         password=request.POST['password']
 
-        cust = authenticate(request,username=username,password=password)
+        cust = User.objects.filter(username=username,password=password)
         data = Video.objects.all()
 
-
         if cust:
+            messages.info(request, username )
             return render(request,'home2.html', { 'data': data })
         else:
             messages.info(request,'invalid user')
@@ -53,19 +53,33 @@ def upload(request):
 
 def store(request):
     if request.method == 'POST':
-        form = VideoForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            data=Video.objects.all()
-            return render(request, 'home2.html', {'data':data})
+        title=request.POST['title']
+        image=request.FILES['image']
+        video=request.FILES['video']
+        vtype=request.POST['type']
+        desc=request.POST['desc']
+
+        items=Video(title=title,image=image,video=video,video_type=vtype,desc=desc)
+        items.save()
+        data=Video.objects.all()
+        return render(request, 'home2.html', {'data':data})
     else:
         form = VideoForm()
     return render(request, 'video.html', {'form': form})
 
-def edit(request, id):
-    data=Video.objects.get(id=id)
-    form=VideoForm(request.POST, instance=data)
-    if form.is_valid():
-        form.save()
-        return redirect('home')
-    return render(request,'video.html', {'data':data})
+# def edit(request, id):
+#     data=Video.objects.get(id=id)
+#     form=VideoForm(request.POST, instance=data)
+#     if form.is_valid():
+#         form.save()
+#         return redirect('home')
+#     return render(request,'video.html', { 'data':data })
+
+def play(request,pk):
+    if request.method == 'POST':
+        demo1 = Video.objects.filter(id=pk)
+        # print('POST')
+        return render(request,'play.html', { 'demo1' : demo1 })
+    else:
+        print('GET')
+        return render(request,'play.html')

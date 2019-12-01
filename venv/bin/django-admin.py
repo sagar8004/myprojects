@@ -1,4 +1,4 @@
-#!/home/sagar/Delpoy2/website/venv/bin/python3
+#!/home/sagar/Deploy1/website/venv/bin/python3
 from django.core import management
 
 if __name__ == "__main__":

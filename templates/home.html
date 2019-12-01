@@ -1,41 +1,81 @@
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
-
-</head>
-<body>
-    
-    <div>
-        <h1 class="name">vid<span style="color:grey">gyor</span></h1>
-    </div>
-    <div class="layout">
-        <span style="font-size: 40px">Login</span>
-        <form action="content" method="POST">
-            {% csrf_token %}        
-            <p>
-                Username <input type="textbox" name="username">
-            </p>
-            <p>
-                Password <input type="password" name="password">
-            </p>
-            <p style="color: red"> 
-            {% for message in messages %}
-            {{ message }}
-            {% endfor %}
-            </p>
-            <button> Signin
-            </button>
-        </form>
-        <form action="register">
-            <p>
-            </p>
-            <button>
-                Signup
-            </button>
-        </form>
-    </div>
-
-</body>
-</html>
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">  
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>    
+            <style>
+                .navbar-nav.navbar-center {
+                position: absolute;
+                left: 50%;
+                transform: translatex(-50%);
+                }
+                .navbar-inverse {
+                background-image:url(http://www.joburgchiropractor.co.za/images/background.jpg);
+                border: none;
+                }
+                *{
+                    margin: 3px;
+                }
+                .navbar.navbar-center{
+                background-color: lightblue;
+                border: 1px solid lightgray;
+                width: 238px;
+                height:350px;
+                left: 50%;
+                transform: translateX(-50%);
+                top:60px;
+                box-shadow: 3px 3px 3px black , 3px 3px 3px blue , 3px 3px 3px red;
+                }
+                body{
+                background-image: url(http://www.joburgchiropractor.co.za/images/background.jpg);
+                }
+                #vidgyor{
+                    text-shadow: 3px 3px 4px black,3px 3px 5px blue;
+                    font-size: 60px;
+                }
+            </style>
+        </head>
+        <body>
+             <nav class="navbar navbar-inverse">
+                 <div class="container-fluid">
+                    <div class="navbar-header">
+                        <h2 class="nav navbar-nav navbar-center" id="vidgyor"><span style="color: blue">vid<i style="color: grey">gyor</i></span></h2>
+                    </div>
+                </div>
+            </nav>
+            <div class="navbar navbar-center">
+            <form action="content" method="POST">
+            {% csrf_token %}
+              <div class="navbar-header">
+                    <div class="nav navbar-nav navbar-center">
+                        <p style="font-size: 22px;font-family: cursive">Login Page</p>
+                    </div>
+                    <div class="form-group">
+                        <p>&nbsp;</p>
+                        <label >Username<input type="text" class="form-control" placeholder="username" name="username"></label>
+                    </div>
+                    <p style="color: red">{% for message in messages %}
+                        {{ message }}
+                        {% endfor %}</p>
+                    <div>      
+                        <label >Password<input type="password" class="form-control" placeholder="password" name="password"></label>
+                    </div>
+                    <p>&nbsp;</p>
+                    <div>
+                        <input type="submit" class="btn btn-primary btn-block" value="Signin" name="Signin">
+                    </div>
+             </form>
+             <p>&nbsp;</p>
+             <form action="register">
+                    <div>
+                        <input type="submit" class="btn btn-info btn-block" value="Signup for new Account" name="Signup">
+                    </div>
+            </form>
+              </div>
+            </div>
+        </body>
+    </html>
